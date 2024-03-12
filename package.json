@@ -1,7 +1,7 @@
 {
   "name": "datetime-picker-slot",
   "version": "0.1.0",
-  "description": "A webcomponent for date and time slot picker",
+  "description": "A web component for date and time slot picker",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -27,7 +27,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyberabis/datetime-picker-slot.git"
+    "url": "https://github.com/huykon/datetime-picker-slot.git"
   },
   "keywords": [
     "Date Time Slot Picker",
