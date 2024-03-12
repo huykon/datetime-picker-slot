@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>A web component for date and time slot picker</title>
+
+  <script type="module" src="/build/datetime-picker-slot.esm.js"></script>
+  <script nomodule src="/build/datetime-picker-slot.js"></script>
+</head>
+
+<body>
+  <datetime-picker-slot
+    time-slots-text="Time Slot"
+    dates-hidden-when-times-shown
+    no-slots-text="No slots are available"
+    placeholder="Pick a time slot"
+    initial-display-text="Thu, 14 Mar 2024, 5 PM - 6 PM"
+    language="en">
+  </datetime-picker-slot>
+  <!-- ALL OPTIONS VERSION
+    <datetime-picker-slot
+      placeholder="Pick a time slot"
+      time-slots-text="Time"
+      no-slots-text="No slots are available"
+      language="en"
+      date-format="MM-DD-YYYY"
+      time-format="HH:mm"
+      dates-hidden-when-times-shown
+      >
+    </datetime-picker-slot>
+    -->
+  <script>
+    const datetimeSlotPicker = document.querySelector('datetime-picker-slot');
+    datetimeSlotPicker.addEventListener('slotUpdate', function (event) { console.log('Updated Slot: ', event.detail) });
+    datetimeSlotPicker.slots = [
+      {
+        date: 'Tue, 12 Mar 2024',
+        timeSlots: [
+          '6:00 AM',
+          '7:00 AM',
+          '8:00 AM',
+          '9:00 AM',
+          '10:00 AM',
+          '11:00 AM',
+          '12:00 PM',
+          '1:00 PM',
+          '2:00 PM',
+          '4:00 PM',
+          '5:00 PM',
+          '6:00 PM',
+          '7:00 PM',
+          '8:00 PM'
+        ]
+      },
+      {
+        date: 'Thu, 14 Mar 2024',
+        timeSlots: [
+          '10 AM - 11 AM',
+          '11 AM - 12 PM',
+          '4 PM - 5 PM',
+          '5 PM - 6 PM'
+        ]
+      },
+      {
+        date: 'Mon, 18 Mar 2024',
+        timeSlots: [
+        ]
+      },
+      {
+        date: 'Mon, 1 Apr 2024',
+        timeSlots: [
+          '10 AM - 11 AM',
+          '11 AM - 12 PM',
+          '4 PM - 5 PM',
+          '5 PM - 6 PM'
+        ]
+      },
+      {
+        date: 'Tue, 3 Apr 2024',
+        timeSlots: [
+          '6 AM - 7 AM',
+          '7 AM - 8 AM',
+          '8 AM - 9 AM',
+          '9 AM - 10 AM',
+          '10 AM - 11 AM',
+          '11 AM - 12 PM',
+          '12 PM - 1 PM',
+          '1 PM - 2 PM',
+          '2 PM - 3 PM',
+          '3 PM - 4 PM',
+          '4 PM - 5 PM',
+          '5 PM - 6 PM',
+          '6 PM - 7 PM',
+          '7 PM - 8 PM',
+          '8 PM - 9 PM',
+          '9 PM - 10 PM',
+          '10 PM - 11 PM',
+          '11 PM - 12 AM'
+        ]
+      }
+    ];
+  </script>
+</body>
+
+</html>
