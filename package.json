@@ -29,6 +29,7 @@
     "type": "git",
     "url": "https://github.com/huykon/datetime-picker-slot.git"
   },
+  "author": "huykon",
   "keywords": [
     "Date Time Slot Picker",
     "Time Slot Picker",

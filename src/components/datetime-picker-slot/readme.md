@@ -11,6 +11,7 @@
 | --------------------------- | ------------------------------- | ----------- | -------------- | -------------------------- |
 | `dateFormat`                | `date-format`                   |             | `string`       | `'ddd, D MMM YYYY'`        |
 | `datesHiddenWhenTimesShown` | `dates-hidden-when-times-shown` |             | `boolean`      | `false`                    |
+| `initialDisplayText`        | `initial-display-text`          |             | `string`       | `undefined`                |
 | `language`                  | `language`                      |             | `string`       | `'en'`                     |
 | `noSlotsText`               | `no-slots-text`                 |             | `string`       | `'No slots are available'` |
 | `placeholder`               | `placeholder`                   |             | `string`       | `'Pick a slot'`            |
@@ -18,7 +19,6 @@
 | `timeFormat`                | `time-format`                   |             | `string`       | `'h:mm A'`                 |
 | `timeSlotsText`             | `time-slots-text`               |             | `string`       | `'Time Slot'`              |
 | `translations`              | --                              |             | `Translations` | `builtInTranslations`      |
-| `initialDisplayText`        | `initial-display-text`          |             | `string`       | ``                         |
 
 
 ## Events
