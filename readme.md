@@ -8,14 +8,14 @@ When "timeSlots" is not passed, the component acts as a pure date picker.
 
 This date and time slot picker is useful for below cases:
 - If you have a set of dates that alone should be available for user input
-- If you also want to display a custom time slot along with the date, eg: Sat, 28 Nov 2020, 10 AM - 11 AM.
+- If you also want to display a custom time slot along with the date, eg: Thu, 14 Mar 2024, 5 PM - 6 PM.
 - Useful for appointment booking, choosing a delivery time, restaurant reservation, etc.
 - Supports multi language translations. You can pass your own translations and display text.
 - Supports displaying time slots in multiple formats: Eg: 4 PM, 4:00 PM, 16:00, 4 PM - 5 PM, 4:00 PM - 5:00 PM, 16:00 - 17:00.
 
 # Usage and Live Demo
 
-<!-- [View JS Bin](https://jsbin.com/yihufeg/edit?html,output) -->
+[View demo](https://codesandbox.io/p/sandbox/datetime-slot-picker-gvd69w)
 
 ## Using the component in HTML
 
@@ -167,7 +167,7 @@ There are three strategies we recommend for using web components built with Sten
 
 ## Customizing Appearance
 
-You can customize the styling by using CSS. All HTML elemets have a class name (usually starting with "neo", Eg: "neo-input") that can be used.
+You can customize the styling by using CSS. All HTML elemets have a class name (usually starting with "meo", Eg: "meo-input") that can be used.
 
 ## Developers
 
