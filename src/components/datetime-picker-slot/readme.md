@@ -11,6 +11,7 @@
 | --------------------------- | ------------------------------- | ----------- | -------------- | -------------------------- |
 | `dateFormat`                | `date-format`                   |             | `string`       | `'ddd, D MMM YYYY'`        |
 | `datesHiddenWhenTimesShown` | `dates-hidden-when-times-shown` |             | `boolean`      | `false`                    |
+| `firstDayOfWeek`            | `first-day-of-week`             |             | `number`       | `0`                        |
 | `initialDisplayText`        | `initial-display-text`          |             | `string`       | `undefined`                |
 | `language`                  | `language`                      |             | `string`       | `'en'`                     |
 | `noSlotsText`               | `no-slots-text`                 |             | `string`       | `'No slots are available'` |

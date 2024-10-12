@@ -11,6 +11,7 @@ export namespace Components {
     interface DatetimePickerSlot {
         "dateFormat": string;
         "datesHiddenWhenTimesShown": boolean;
+        "firstDayOfWeek": number;
         "initialDisplayText": string;
         "language": string;
         "noSlotsText": string;
@@ -36,6 +37,7 @@ declare namespace LocalJSX {
     interface DatetimePickerSlot {
         "dateFormat"?: string;
         "datesHiddenWhenTimesShown"?: boolean;
+        "firstDayOfWeek"?: number;
         "initialDisplayText"?: string;
         "language"?: string;
         "noSlotsText"?: string;

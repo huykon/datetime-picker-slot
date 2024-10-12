@@ -4,7 +4,7 @@ import { Slot } from '../../models/slot';
 import { DateGrid } from '../../models/date-grid';
 import { TimeGrid } from '../../models/time-grid';
 import { Translations } from '../../models/translations';
-import { generateDateGrid } from '../../utils/generate-date-grid';
+import { generateDateGrid, arrangeDays } from '../../utils/generate-date-grid';
 import { generateTimeGrid } from '../../utils/generate-time-grid';
 
 @Component({
@@ -22,6 +22,7 @@ export class DatetimePickerSlot {
   @Prop() translations: Translations = builtInTranslations;
   @Prop() datesHiddenWhenTimesShown: boolean = false;
   @Prop() initialDisplayText: string;
+  @Prop() firstDayOfWeek: number = 0; // 0 for Sunday, 1 for Monday
 
   @State() isPopped: boolean;
   @State() isMeoInputAboveFold: boolean;
@@ -64,7 +65,7 @@ export class DatetimePickerSlot {
       this.selectedDate = undefined;
       this.selectedTime = undefined;
       this.displayText = this.initialDisplayText ? this.initialDisplayText : undefined;
-      this.dateGrids = generateDateGrid(slots);
+      this.dateGrids = generateDateGrid(slots, this.firstDayOfWeek);
       if (this.dateGrids && this.dateGrids.length) this.activeDateGridPage = 0;
     }
   }
@@ -218,7 +219,6 @@ export class DatetimePickerSlot {
       right: !this.isMeoInputLeftSide ? '0px' : undefined,
     };
     let activeMonthYear: string[];
-    console.log(`======this.dateGrids=======`, this.dateGrids);
     if (this.dateGrids && this.dateGrids.length > 0) activeMonthYear = this.dateGrids[this.activeDateGridPage].monthYear.split(' ');
     return (
       <span class="meo-slot-picker">
@@ -264,13 +264,9 @@ export class DatetimePickerSlot {
                   </th>
                 </tr>
                 <tr class="meo-tr meo-equal-width">
-                  <td class="meo-td">{this.getTranslation('Sun')}</td>
-                  <td class="meo-td">{this.getTranslation('Mon')}</td>
-                  <td class="meo-td">{this.getTranslation('Tue')}</td>
-                  <td class="meo-td">{this.getTranslation('Wed')}</td>
-                  <td class="meo-td">{this.getTranslation('Thu')}</td>
-                  <td class="meo-td">{this.getTranslation('Fri')}</td>
-                  <td class="meo-td">{this.getTranslation('Sat')}</td>
+                  {arrangeDays(this.firstDayOfWeek).map(day => (
+                    <td class="meo-td">{this.getTranslation(day)}</td>
+                  ))}
                 </tr>
                 {this.dateGrids[this.activeDateGridPage].weeks.map(week => {
                   return (

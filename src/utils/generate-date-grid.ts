@@ -5,7 +5,7 @@ const monthIndex = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-export function generateDateGrid(slots: Slot[]): DateGrid[] {
+export function generateDateGrid(slots: Slot[], firstDayOfWeek: number = 0): DateGrid[] {
   let dateGrids: DateGrid[] = [];
   //Validate formats and consistency
   //Get min and max date
@@ -40,7 +40,7 @@ export function generateDateGrid(slots: Slot[]): DateGrid[] {
       let allDays = [];
       let startDate = new Date(y1, m1, 1);
       let lastDate = new Date(y1, m1 + 1, 0);
-      for (let frontPadCounter = 1; frontPadCounter <= startDate.getDay(); frontPadCounter++) {
+      for (let frontPadCounter = 1; frontPadCounter <= startDate.getDay() - firstDayOfWeek; frontPadCounter++) {
         allDays.push(null);
       }
       for (let dayCounter = 1; dayCounter <= lastDate.getDate(); dayCounter++) {
@@ -73,4 +73,8 @@ export function generateDateGrid(slots: Slot[]): DateGrid[] {
     } while (y1 < y2 || (y1 === y2 && m1 <= m2))
   }
   return dateGrids;
+}
+
+export function arrangeDays(firstDayOfWeek: number = 0) {
+  return [...days.slice(firstDayOfWeek), ...days.slice(0, firstDayOfWeek)];;
 }

@@ -11,13 +11,10 @@
 </head>
 
 <body>
-  <datetime-picker-slot
-    time-slots-text="Time Slot"
-    dates-hidden-when-times-shown
-    no-slots-text="No slots are available"
-    placeholder="Pick a time slot"
-    initial-display-text="Thu, 14 Mar 2024, 5 PM - 6 PM"
-    language="en">
+  <datetime-picker-slot time-slots-text="Time Slot" dates-hidden-when-times-shown no-slots-text="No slots are available"
+    placeholder="Pick a time slot" initial-display-text="Thu, 14 Mar 2024, 5 PM - 6 PM" language="en"
+    first-day-of-week="1">
+
   </datetime-picker-slot>
   <!-- ALL OPTIONS VERSION
     <datetime-picker-slot
@@ -78,7 +75,7 @@
         ]
       },
       {
-        date: 'Tue, 3 Apr 2024',
+        date: 'Wed, 3 Apr 2024',
         timeSlots: [
           '6 AM - 7 AM',
           '7 AM - 8 AM',
