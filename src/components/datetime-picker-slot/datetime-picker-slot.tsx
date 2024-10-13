@@ -109,6 +109,9 @@ export class DatetimePickerSlot {
     if (this.dateFormat === 'MM-DD-YYYY') {
       let formattedDate = new Date(this.selectedDate);
       translatedSelectedDate = `${formattedDate.getMonth() + 1}-${formattedDate.getDate()}-${formattedDate.getFullYear()}`;
+    } else if (this.dateFormat === 'DD-MM-YYYY') {
+      let formattedDate = new Date(this.selectedDate);
+      translatedSelectedDate = `${formattedDate.getDate()}-${formattedDate.getMonth() + 1}-${formattedDate.getFullYear()}`;
     } else {
       //ddd, D MMM YYYY
       let selectedDateParts = this.selectedDate.split(' ');
